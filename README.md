@@ -50,7 +50,7 @@ ProxSec is an open-source browser extension designed for bug bounty hunters and 
 ### Developer Installation
 1. Clone this repository
    ```bash
-   git clone https://github.com/yourusername/proxsec.git
+   git clone https://github.com/aacle/proxsec.git
    ```
 
 2. Open your browser's extension management page:
