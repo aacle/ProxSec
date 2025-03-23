@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProxSec</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-top">
+        <div class="logo">
+          <img src="icons/icon48.png" alt="ProxSec Logo" class="logo-image">
+          <div class="logo-text">
+            <h1>ProxSec</h1>
+            <p class="subtitle">An extension for infosec community</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="quick-proxy-toggle" class="btn-icon social-link" title="Toggle Proxy">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+          </button>
+          <button class="btn-icon social-link" title="Website">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+          </button>
+        </div>
+      </div>
+      <div class="tabs">
+        <button class="tab active" data-tab="dashboard">Dashboard</button>
+        <button class="tab" data-tab="proxies">Proxies</button>
+        <button class="tab" data-tab="programs">Programs</button>
+        <button class="tab" data-tab="about">About</button>
+      </div>
+    </header>
+    
+    <div id="status-bar" class="status-bar">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+      Ready
+    </div>
+    
+    <main>
+      <!-- Dashboard Tab Content -->
+      <div id="dashboard-content" class="tab-content active">
+        <div class="dashboard-grid">
+          <!-- Proxy Status Card -->
+          <div class="dashboard-card">
+            <div class="card-header">
+              <h3>Active Proxy</h3>
+            </div>
+            <div class="card-body">
+              <div id="active-proxy-info" class="active-proxy-info">
+                <div class="empty-state">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                  <p>No active proxy</p>
+                </div>
+              </div>
+              <div class="dashboard-action">
+                <button class="btn btn-primary" id="dashboard-add-proxy">Add New Proxy</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Programs Statistics Card -->
+          <div class="dashboard-card">
+            <div class="card-header">
+              <h3>Programs</h3>
+            </div>
+            <div class="card-body">
+              <div class="stats-container">
+                <div class="stat-item">
+                  <div class="stat-value" id="total-programs">0</div>
+                  <div class="stat-label">Programs</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-value" id="in-scope-count">0</div>
+                  <div class="stat-label">In-Scope</div>
+                </div>
+              </div>
+              <div id="scope-status" class="scope-status-indicator">
+                <div class="status-icon out-of-scope">
+                  <span class="icon-content">Out of Scope</span>
+                </div>
+              </div>
+              <div class="dashboard-action">
+                <button class="btn btn-primary" id="dashboard-add-program">Add Program</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Proxies Tab Content -->
+      <div id="proxies-content" class="tab-content">
+        <div class="section-header">
+          <h2>Manage Proxies</h2>
+          <button id="add-proxy-btn" class="btn btn-primary">Add Proxy</button>
+        </div>
+        
+        <div id="proxy-list" class="list-container"></div>
+        
+        <!-- Proxy Form -->
+        <div id="proxy-form-container" class="form-container hidden">
+          <div class="form-header">
+            <h3 id="form-title">Add Proxy</h3>
+          </div>
+          <form id="proxy-form">
+            <div class="form-group">
+              <label for="proxy-name">Name</label>
+              <input type="text" id="proxy-name" placeholder="My Burp Proxy" required>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="proxy-protocol">Protocol</label>
+                <select id="proxy-protocol">
+                  <option value="http">HTTP</option>
+                  <option value="https">HTTPS</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="proxy-ip">IP Address</label>
+                <input type="text" id="proxy-ip" placeholder="127.0.0.1" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="proxy-port">Port</label>
+                <input type="number" id="proxy-port" placeholder="8080" min="1" max="65535" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="proxy-username">Username (optional)</label>
+                <input type="text" id="proxy-username" placeholder="Username">
+              </div>
+              
+              <div class="form-group">
+                <label for="proxy-password">Password (optional)</label>
+                <input type="password" id="proxy-password" placeholder="Password">
+              </div>
+            </div>
+            
+            <div class="form-actions">
+              <button type="button" id="cancel-proxy-btn" class="btn btn-secondary">Cancel</button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Programs Tab Content -->
+      <div id="programs-content" class="tab-content">
+        <div class="section-header">
+          <h2>Bug Bounty Programs</h2>
+          <button id="add-program-btn" class="btn btn-primary">Add Program</button>
+        </div>
+        
+        <div id="program-list" class="list-container"></div>
+        
+        <!-- Program Form -->
+        <div id="program-form-container" class="form-container hidden">
+          <div class="form-header">
+            <h3 id="program-form-title">Add Program</h3>
+          </div>
+          <form id="program-form">
+            <div class="form-group">
+              <label for="program-name">Program Name</label>
+              <input type="text" id="program-name" placeholder="Example Corp" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="program-url">Program URL</label>
+              <input type="url" id="program-url" placeholder="https://example.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="program-scope">Scope Domains</label>
+              <textarea id="program-scope" rows="4" placeholder="*.example.com&#10;api.example.com&#10;static.example.com" required></textarea>
+              <p class="form-help">Enter domain patterns, one per line. Use * as wildcard (e.g., *.example.com).</p>
+            </div>
+            
+            <div class="form-group">
+              <label for="program-notes">Notes (optional)</label>
+              <textarea id="program-notes" rows="3" placeholder="Additional notes about this program..."></textarea>
+            </div>
+            
+            <div class="form-actions">
+              <button type="button" id="cancel-program-btn" class="btn btn-secondary">Cancel</button>
+              <button type="submit" class="btn btn-primary">Save Program</button>
+            </div>
+          </form>
+        </div>
+        
+        <!-- Current URL Status -->
+        <div id="scope-status-container" class="status-container"></div>
+      </div>
+      
+      <!-- About Tab Content -->
+      <div id="about-content" class="tab-content">
+        <h2>About ProxSec</h2>
+        <p class="description">
+          ProxSec is an open-source browser extension designed for bug bounty hunters and security professionals.
+          It provides tools to enhance your workflow and optimize your security testing processes.
+        </p>
+        
+        <div class="info-box">
+          <h3>Security Information</h3>
+          <p>
+            <strong>Your data stays with you:</strong> ProxSec doesn't send any data to external servers.
+            All your configurations and settings are stored locally in your browser.
+          </p>
+          <p>
+            <strong>Encrypted storage:</strong> All sensitive data stored by ProxSec is encrypted using your browser's built-in storage encryption.
+          </p>
+        </div>
+        
+        <div class="info-box">
+          <h3>Features</h3>
+          <ul>
+            <li>Proxy management with support for HTTP/HTTPS</li>
+            <li>Bug bounty program management</li>
+            <li>Scope awareness for staying within program boundaries</li>
+            <li>Secure credential storage for authenticated proxies</li>
+          </ul>
+        </div>
+        
+        <div class="info-box">
+          <h3>Coming Soon</h3>
+          <ul>
+            <li>Note-taking for vulnerabilities</li>
+            <li>Customizable recon tools</li>
+            <li>Vulnerability report templates</li>
+          </ul>
+        </div>
+        
+        <div class="trust-badges">
+          <div class="badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>MIT License</span>
+          </div>
+          <div class="badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+            <span>Open Source</span>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <footer>
+      <div class="version">Version 1.0.0</div>
+    </footer>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

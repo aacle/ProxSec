@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Background shield -->
+  <path d="M64 8L16 32v32c0 32.6 19.8 63 48 76 28.2-13 48-43.4 48-76V32L64 8z" fill="#334155" />
+  <path d="M64 16L24 36v28c0 28.2 17.2 54.6 40 66 22.8-11.4 40-37.8 40-66V36L64 16z" fill="#1e293b" />
+  
+  <!-- Shield inner highlight -->
+  <path d="M64 22L29 39.5v24.5c0 24.8 15 47.6 35 58.5 20-10.9 35-33.7 35-58.5V39.5L64 22z" fill="#0f172a" />
+  
+  <!-- Lock body -->
+  <rect x="44" y="54" width="40" height="32" rx="4" fill="#3b82f6" />
+  
+  <!-- Lock top -->
+  <path d="M76 54H52v-8c0-6.6 5.4-12 12-12s12 5.4 12 12v8z" fill="#2563eb" />
+  
+  <!-- Bug inside lock -->
+  <circle cx="64" cy="70" r="12" fill="#fde68a" />
+  <path d="M64 82c-6.6 0-12-5.4-12-12s5.4-12 12-12 12 5.4 12 12-5.4 12-12 12z" fill="none" stroke="#fb923c" stroke-width="1.5" />
+  
+  <!-- Bug details -->
+  <circle cx="64" cy="70" r="8" fill="#fb923c" />
+  <circle cx="59" cy="65" r="2" fill="#0f172a" />
+  <circle cx="69" cy="65" r="2" fill="#0f172a" />
+  
+  <!-- Antenna -->
+  <path d="M58 60l-4-5M70 60l4-5" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" />
+  
+  <!-- Bug legs -->
+  <path d="M56 70l-6 4M56 74l-6 3M72 70l6 4M72 74l6 3" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" />
+  
+  <!-- Keyhole in lock -->
+  <circle cx="64" cy="70" r="4" fill="#1e293b" />
+  <path d="M64 70v6" stroke="#1e293b" stroke-width="2" stroke-linecap="round" />
+  
+  <!-- Outer glow -->
+  <path d="M64 8L16 32v32c0 32.6 19.8 63 48 76 28.2-13 48-43.4 48-76V32L64 8z" fill="none" stroke="#60a5fa" stroke-width="1" opacity="0.5" />
+</svg> 

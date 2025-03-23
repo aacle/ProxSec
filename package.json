@@ -1,0 +1,23 @@
+{
+  "name": "vulncure",
+  "version": "1.0.0",
+  "description": "A browser extension for bug bounty hunters and penetration testers",
+  "scripts": {
+    "generate-icons": "node scripts/generate-icons.js",
+    "build": "npm run generate-icons",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bug-bounty",
+    "security",
+    "penetration-testing",
+    "proxy",
+    "browser-extension"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "fs-extra": "^10.1.0",
+    "sharp": "^0.30.7"
+  }
+} 
