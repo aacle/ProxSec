@@ -55,8 +55,6 @@ ProxSec is an open-source browser extension designed for bug bounty hunters and 
 
 2. Open your browser's extension management page:
    - Chrome: Navigate to `chrome://extensions/`
-   - Firefox: Navigate to `about:addons`
-   - Edge: Navigate to `edge://extensions/`
 
 3. Enable Developer Mode
 
