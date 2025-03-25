@@ -89,6 +89,26 @@ ProxSec is an open-source browser extension designed for bug bounty hunters and 
 2. Open the extension
 3. The dashboard will show if the current domain is in scope for any of your programs
 
+## 📸 Screenshots
+
+Here's a visual tour of ProxSec's key features and interface:
+
+### Dashboard Overview
+![Dashboard Overview](screenshots/image1.png)
+*The main dashboard provides quick access to proxy controls and program status*
+
+### Proxy Management
+![Proxy Configuration](screenshots/image2.png)
+*Easily configure and manage multiple proxy settings*
+
+### Program Management
+![Program Settings](screenshots/image3.png)
+*Add and manage bug bounty programs with detailed scope settings*
+
+### Active Monitoring
+![Active Status](screenshots/image4.png)
+*Real-time status monitoring and scope validation*
+
 ## 🔄 Sample Workflow
 
 Here's a typical workflow example using ProxSec:
