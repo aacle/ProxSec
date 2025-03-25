@@ -14,6 +14,45 @@
 
 ProxSec is an open-source browser extension designed for bug bounty hunters and security professionals. It streamlines your workflow with efficient proxy management, bug bounty program tracking, and scope checking capabilities - all in a clean, minimalist interface.
 
+## 📸 Screenshots
+
+Here's a visual tour of ProxSec's key features and interface:
+
+<table>
+  <tr>
+    <td width="50%">
+      <p align="center">
+        <strong>Dashboard Overview</strong><br>
+        <img src="screenshots/image1.png" alt="Dashboard Overview"/><br>
+        <em>The main dashboard provides quick access to proxy controls and program status</em>
+      </p>
+    </td>
+    <td width="50%">
+      <p align="center">
+        <strong>Proxy Management</strong><br>
+        <img src="screenshots/image2.png" alt="Proxy Configuration"/><br>
+        <em>Easily configure and manage multiple proxy settings</em>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <p align="center">
+        <strong>Program Management</strong><br>
+        <img src="screenshots/image3.png" alt="Program Settings"/><br>
+        <em>Add and manage bug bounty programs with detailed scope settings</em>
+      </p>
+    </td>
+    <td width="50%">
+      <p align="center">
+        <strong>Active Monitoring</strong><br>
+        <img src="screenshots/image4.png" alt="Active Status"/><br>
+        <em>Real-time status monitoring and scope validation</em>
+      </p>
+    </td>
+  </tr>
+</table>
+
 ## 💡 Why ProxSec?
 
 - **Streamlined Testing:** Quickly toggle proxies on/off without opening multiple tabs or navigating away from your work
@@ -87,45 +126,6 @@ ProxSec is an open-source browser extension designed for bug bounty hunters and 
 1. Visit any website
 2. Open the extension
 3. The dashboard will show if the current domain is in scope for any of your programs
-
-## 📸 Screenshots
-
-Here's a visual tour of ProxSec's key features and interface:
-
-<table>
-  <tr>
-    <td width="50%">
-      <p align="center">
-        <strong>Dashboard Overview</strong><br>
-        <img src="screenshots/image1.png" alt="Dashboard Overview"/><br>
-        <em>The main dashboard provides quick access to proxy controls and program status</em>
-      </p>
-    </td>
-    <td width="50%">
-      <p align="center">
-        <strong>Proxy Management</strong><br>
-        <img src="screenshots/image2.png" alt="Proxy Configuration"/><br>
-        <em>Easily configure and manage multiple proxy settings</em>
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <p align="center">
-        <strong>Program Management</strong><br>
-        <img src="screenshots/image3.png" alt="Program Settings"/><br>
-        <em>Add and manage bug bounty programs with detailed scope settings</em>
-      </p>
-    </td>
-    <td width="50%">
-      <p align="center">
-        <strong>Active Monitoring</strong><br>
-        <img src="screenshots/image4.png" alt="Active Status"/><br>
-        <em>Real-time status monitoring and scope validation</em>
-      </p>
-    </td>
-  </tr>
-</table>
 
 ## 🔄 Sample Workflow
 
