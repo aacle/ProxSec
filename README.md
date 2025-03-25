@@ -50,17 +50,16 @@ ProxSec is an open-source browser extension designed for bug bounty hunters and 
 ### Developer Installation
 1. Clone this repository
    ```bash
-   git clone https://github.com/yourusername/proxsec.git
+   git clone https://github.com/aacle/proxsec.git
    ```
 
 2. Open your browser's extension management page:
    - Chrome: Navigate to `chrome://extensions/`
-   - Firefox: Navigate to `about:addons`
-   - Edge: Navigate to `edge://extensions/`
+   - Firefox (Comming Soon)
 
 3. Enable Developer Mode
 
-4. Click "Load unpacked" (Chrome/Edge) or "Load Temporary Add-on" (Firefox) and select the extension directory
+4. Click "Load unpacked" (Chrome/Edge) select the extension directory
 
 ## 📖 How to Use
 
