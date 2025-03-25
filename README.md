@@ -92,21 +92,40 @@ ProxSec is an open-source browser extension designed for bug bounty hunters and 
 
 Here's a visual tour of ProxSec's key features and interface:
 
-### Dashboard Overview
-![Dashboard Overview](screenshots/image1.png)
-*The main dashboard provides quick access to proxy controls and program status*
-
-### Proxy Management
-![Proxy Configuration](screenshots/image2.png)
-*Easily configure and manage multiple proxy settings*
-
-### Program Management
-![Program Settings](screenshots/image3.png)
-*Add and manage bug bounty programs with detailed scope settings*
-
-### Active Monitoring
-![Active Status](screenshots/image4.png)
-*Real-time status monitoring and scope validation*
+<table>
+  <tr>
+    <td width="50%">
+      <p align="center">
+        <strong>Dashboard Overview</strong><br>
+        <img src="screenshots/image1.png" alt="Dashboard Overview"/><br>
+        <em>The main dashboard provides quick access to proxy controls and program status</em>
+      </p>
+    </td>
+    <td width="50%">
+      <p align="center">
+        <strong>Proxy Management</strong><br>
+        <img src="screenshots/image2.png" alt="Proxy Configuration"/><br>
+        <em>Easily configure and manage multiple proxy settings</em>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <p align="center">
+        <strong>Program Management</strong><br>
+        <img src="screenshots/image3.png" alt="Program Settings"/><br>
+        <em>Add and manage bug bounty programs with detailed scope settings</em>
+      </p>
+    </td>
+    <td width="50%">
+      <p align="center">
+        <strong>Active Monitoring</strong><br>
+        <img src="screenshots/image4.png" alt="Active Status"/><br>
+        <em>Real-time status monitoring and scope validation</em>
+      </p>
+    </td>
+  </tr>
+</table>
 
 ## 🔄 Sample Workflow
 
